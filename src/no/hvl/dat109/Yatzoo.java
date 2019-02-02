@@ -17,7 +17,9 @@ public class Yatzoo {
 		start();
 		slutt();
 	}
-
+/**
+ * Hovudprogrammet, går igjennom "spel" fasen til applikasjonen
+ */
 	private static void start() {
 		TerningKopp kopp = new TerningKopp(5);
 		String trillPaaNytt;
@@ -44,7 +46,10 @@ public class Yatzoo {
 			}
 		}
 	}
-
+/**
+ * Kallast på når spellet er over. Kallar på nødvendige metodar for å kalkulere poeng, og
+ * finne ein vinnar.
+ */
 	private static void slutt() {
 		poeng.kalkulerPoeng();
 		int[] po = poeng.getPoeng();
@@ -58,7 +63,9 @@ public class Yatzoo {
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 		tekst.skrivUtPoengtabell(spillerPoeng);
 	}
-
+/**
+ * hentar inn tallet spelarar, og namna deira.
+ */
 	private static void oppstartsProsedyre() {
 		do {
 			antallSpillere = tekst.getAntallSpillere();
